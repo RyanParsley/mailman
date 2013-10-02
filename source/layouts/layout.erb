@@ -288,7 +288,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
               <td>
                 <% @pages = current_page.children %>
                 <% for page in @pages %>
-                  <h2><%= page.data.title %></h2>
+                  <h2 id="#<%=page.url%>"><%= page.data.title %></h2>
                   <%= render :markdown, page.url %>
                   <% if current_page.data.events %>
                     <%= partial "layouts/partials/events" %>
@@ -311,7 +311,6 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
                     </li>
                   <% end %>
                 </ul>
-
                 <!-- social & contact -->
                 <table bgcolor="" class="social" width="100%">
                   <tr>
