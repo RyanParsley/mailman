@@ -1,10 +1,19 @@
+GIT
+  remote: git@github.com:mzsanford/premailer.git
+  revision: 51583309350018e61fbabeef04a53b6a2b483410
+  branch: media_query_support
+  specs:
+    premailer (1.7.3)
+      css_parser (>= 1.1.9)
+      htmlentities (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    addressable (2.3.4)
+    addressable (2.3.5)
     capistrano (2.15.4)
       highline
       net-scp (>= 1.0.0)
@@ -20,7 +29,7 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    css_parser (1.3.4)
+    css_parser (1.3.5)
       addressable
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
@@ -96,9 +105,6 @@ GEM
     padrino-helpers (0.10.7)
       i18n (~> 0.6)
       padrino-core (= 0.10.7)
-    premailer (1.7.3)
-      css_parser (>= 1.1.9)
-      htmlentities (>= 4.0.0)
     ptools (1.2.2)
     rack (1.4.5)
     rack-livereload (0.3.13)
@@ -142,6 +148,6 @@ DEPENDENCIES
   middleman-deploy
   middleman-livereload
   nokogiri
-  premailer
+  premailer!
   rake
   redcarpet
