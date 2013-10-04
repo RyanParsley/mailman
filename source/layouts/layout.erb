@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title><%= data.page.title || "ZURBemails"%></title>
+<title><%= data.site.title || "There is no title set in /data/site.yml"%></title>
 
 <link rel="stylesheet" type="text/css" href="../stylesheets/email.css" />
 </head>
@@ -89,10 +89,10 @@
                             <p><%= data.page.date %></p>
                             <p>Volume: <%= data.page.volume %> - Issue:  <%= data.page.issue %></p>
                             <h6 class="">Connect with Us:</h6>
-                            <p class=""><a href="#" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
+                            <p class=""><a href="<%= data.site.facebook %>" class="soc-btn fb">Facebook</a> <a href="<%= data.site.twitter %>" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
                             <h6 class="">Contact Info:</h6>
-                            <p>Phone: <strong>408.341.0600</strong><br/>
-                            Email: <strong><a href="emailto:hseldon@trantor.com">hseldon@trantor.com</a></strong></p>
+                            <p>Phone: <strong><%= data.site.phone %></strong><br/>
+                            Email: <strong><a href="mailto:<%= data.site.contact %>"><%= data.site.contact %></a></strong></p>
                           </td>
                         </tr>
                       </table>
