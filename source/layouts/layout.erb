@@ -18,7 +18,6 @@
   <tr>
     <td></td>
     <td class="header container">
-
       <div class="content">
         <table bgcolor="#999999" class="">
           <tr>
@@ -27,7 +26,6 @@
           </tr>
         </table>
       </div>
-
     </td>
     <td></td>
   </tr>
@@ -39,7 +37,6 @@
   <tr>
     <td></td>
     <td class="container" bgcolor="#FFFFFF">
-
       <!-- content -->
       <div class="content">
         <table>
@@ -53,19 +50,18 @@
 
       <!-- COLUMN WRAP -->
       <div class="column-wrap">
-
         <div class="column" >
           <table align="left">
             <tr>
               <td>
                 <% @pages = current_page.children %>
                 <% for page in @pages %>
-                  <h2 id="#<%=page.url%>"><%= page.data.title %></h2>
-                  <%= render :markdown, page.url %>
-                  <% if current_page.data.events %>
-                    <%= partial "layouts/partials/events" %>
-                  <% end %>
-                <% end %>
+                  <h2 name="<%=page.data.title.gsub(/\s+/, '')%>" id="<%=page.data.title.gsub(/\s+/, '')%>" ><%= page.data.title %></h2>
+                <%= render :markdown, page.url %>
+                <% if current_page.data.events %>
+                  <%= partial "layouts/partials/events" %>
+              <% end %>
+              <% end %>
               </td>
             </tr>
           </table>
@@ -77,50 +73,38 @@
                 <ul class="sidebar">
                   <% for page in current_page.children %>
                     <li>
-                      <a href="#<%=page.url%>">
-                        <h5><%= page.data.title %></h5>
-                      </a>
-                    </li>
-                  <% end %>
+                  <a href="#<%= page.data.title.gsub(/\s+/, '') %>">
+                    <h5><%= page.data.title %></h5>
+                  </a>
+                  </li>
+                <% end %>
                 </ul>
                 <!-- social & contact -->
                 <table bgcolor="" class="social" width="100%">
                   <tr>
                     <td>
-
                       <table align="left" width="100%">
                         <tr>
                           <td>
                             <p><%= data.page.date %></p>
-                            <p>Volume: <%= data.page.volume %>
-                          Issue:  <%= data.page.issue %></p>
-
-
+                            <p>Volume: <%= data.page.volume %> - Issue:  <%= data.page.issue %></p>
                             <h6 class="">Connect with Us:</h6>
                             <p class=""><a href="#" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
-
                             <h6 class="">Contact Info:</h6>
                             <p>Phone: <strong>408.341.0600</strong><br/>
                             Email: <strong><a href="emailto:hseldon@trantor.com">hseldon@trantor.com</a></strong></p>
-
                           </td>
                         </tr>
                       </table>
-
                     </td>
                   </tr>
                 </table><!-- /social & contact -->
-
-
               </td>
             </tr>
           </table>
         </div>
-
         <div class="clear"></div>
-
       </div><!-- /COLUMN WRAP -->
-
     </td>
     <td></td>
   </tr>
@@ -131,8 +115,6 @@
   <tr>
     <td></td>
     <td class="container">
-
-      <!-- content -->
       <div class="content">
         <table>
           <tr>
@@ -145,12 +127,10 @@
             </td>
           </tr>
         </table>
-      </div><!-- /content -->
-
+      </div>
     </td>
     <td></td>
   </tr>
-</table><!-- /FOOTER -->
-
+</table>
 </body>
 </html>
