@@ -1,4 +1,4 @@
-# This is an HTML email generator poweredby [Middleman](http://middlemanapp.com/getting-started/welcome/) and [Premailer](http://premailer.dialect.ca/)
+# This is an HTML email generator powered by [Middleman](http://middlemanapp.com/getting-started/welcome/) and [Premailer](http://premailer.dialect.ca/)
 
 This tool allows you to take a modern aproach (Haml, Sass, Markdown...) to creating HTML then
 translates that into bullet resistant html email by injecting styles
