@@ -57,11 +57,11 @@
                 <% @pages = current_page.children %>
                 <% for page in @pages %>
                   <h2 name="<%=page.data.title.gsub(/\s+/, '')%>" id="<%=page.data.title.gsub(/\s+/, '')%>" ><%= page.data.title %></h2>
-                <%= render :markdown, page.url %>
-                <% if current_page.data.events %>
-                  <%= partial "layouts/partials/events" %>
-              <% end %>
-              <% end %>
+                  <%= render :markdown, page.url %>
+                  <% if current_page.data.events %>
+                    <%= partial "layouts/partials/events" %>
+                  <% end %>
+                <% end %>
               </td>
             </tr>
           </table>
@@ -73,11 +73,11 @@
                 <ul class="sidebar">
                   <% for page in current_page.children %>
                     <li>
-                  <a href="#<%= page.data.title.gsub(/\s+/, '') %>">
-                    <h5><%= page.data.title %></h5>
-                  </a>
-                  </li>
-                <% end %>
+                      <a href="#<%= page.data.title.gsub(/\s+/, '') %>">
+                        <h5><%= page.data.title %></h5>
+                      </a>
+                    </li>
+                  <% end %>
                 </ul>
                 <!-- social & contact -->
                 <table bgcolor="" class="social" width="100%">
@@ -89,7 +89,11 @@
                             <p><%= data.page.date %></p>
                             <p>Volume: <%= data.page.volume %> - Issue:  <%= data.page.issue %></p>
                             <h6 class="">Connect with Us:</h6>
-                            <p class=""><a href="<%= data.site.facebook %>" class="soc-btn fb">Facebook</a> <a href="<%= data.site.twitter %>" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
+                            <p class="">
+                              <a href="<%= data.site.facebook %>" class="soc-btn fb">Facebook</a>
+                              <a href="<%= data.site.twitter %>" class="soc-btn tw">Twitter</a> 
+                              <a href="#" class="soc-btn gp">Google+</a>
+                            </p>
                             <h6 class="">Contact Info:</h6>
                             <p>Phone: <strong><%= data.site.phone %></strong><br/>
                             Email: <strong><a href="mailto:<%= data.site.contact %>"><%= data.site.contact %></a></strong></p>
