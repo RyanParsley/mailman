@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.0.7"
+gem "middleman"
 gem "middleman-deploy"
 gem "middleman-livereload"
 gem "haml", "~>3"
@@ -10,3 +10,7 @@ gem "capistrano"
 gem "redcarpet"
 gem "premailer", :git => 'git@github.com:mzsanford/premailer.git', :branch => "media_query_support"
 gem "nokogiri"
+gem "mandrill-api"
+gem "sinatra"
+gem "sinatra-contrib"
+gem "thin"

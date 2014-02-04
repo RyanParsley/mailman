@@ -1,5 +1,28 @@
 activate :directory_indexes
 require 'premailer'
+require 'mandrill'
+require 'sinatra'
+require 'thin'
+require 'sinatra/reloader'
+require 'bundler/setup'
+
+require "./lib/email"
+
+class MySinatra < Sinatra::Base
+  get "/" do
+    "Hello World (Sinatra)"
+  end
+  get '/:url' do
+    m = MyEmailer.new
+    m.send(params[:url], "ryan.parsley@rockfishinteractive.com")
+    "Email Sent"           ## Sinatra likes to print something out .. so this
+  end
+end
+
+map "/send" do
+  run MySinatra
+end
+
 ### 
 # Compass
 ###
