@@ -67,7 +67,7 @@ Clone this repo locally and follow along with general [documentation for Middlem
 
 ### data/site.yml
 
-This is where you configure test data such as Twitter Urls or contact
+This is where you configure test data such as sender contact
 information to be used in the email campaign.
 
 ### Rakefile
