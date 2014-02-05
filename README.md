@@ -70,7 +70,15 @@ Clone this repo locally and follow along with general [documentation for Middlem
 This is where you configure test data such as sender contact
 information to be used in the email campaign.
 
+### .env
+
+I'd recommend putting your Mandrill api key in a .env file that is
+excluded from version control.
+
+```
+ENV['MANDRILL_APIKEY'] = ''
+```
+
 ### Rakefile
 
-This is where you set your Mandrill api key and other variables that
-allow you to send via the Mandrill service.
+This is where you set other variables that allow you to send via the Mandrill service.
