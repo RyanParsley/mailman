@@ -1,4 +1,5 @@
 require "./lib/email"
+ENV['MANDRILL_APIKEY'] = 'lF-Pq1M5RPbrphuAgx_4LA'
 
 SSH_USER = 'root'
 SSH_HOST = 'www.example.com'
@@ -7,11 +8,11 @@ ACTIVE_EMAIL = '2013_october/index.html'
 SENDER = 'ryan.parsley@rockfishinteractive.com'
 RECIPIENT_LIST = [  
        {  
-         :email=> "rmparsley@gmail.com",  ## this uses the email argument passed into this method
+         :email=> "rmparsley@gmail.com",
          :name=> "Recipient1"  
        },
        {  
-         :email=> "ryan.parsley@rockfishinteractive.com",  ## this uses the email argument passed into this method
+         :email=> "ryan.parsley@rockfishinteractive.com",  
          :name=> "Recipient2"  
        }    
      ]

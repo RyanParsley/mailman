@@ -1,7 +1,5 @@
-require 'rubygems'
 require 'mandrill'
 
-ENV['MANDRILL_APIKEY'] = 'lF-Pq1M5RPbrphuAgx_4LA'
 class MyEmailer
   def rakeSend(url, from, to)
     m = Mandrill::API.new
