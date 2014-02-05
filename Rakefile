@@ -8,8 +8,8 @@ ACTIVE_EMAIL = '2013_october/index.html'
 SENDER = 'ryan.parsley@rockfishinteractive.com'
 RECIPIENT_LIST = [  
        {  
-         :email=> "rmparsley@gmail.com",
-         :name=> "Recipient1"  
+         :email=> "rockfishinteractive1.9045e3b.new@emailtests.com",
+         :name=> "Litmus"  
        },
        {  
          :email=> "ryan.parsley@rockfishinteractive.com",  
