@@ -1,3 +1,5 @@
+base:
+  http://ryanparsley.github.io/mailman
 title:
   Email Test
 contact:

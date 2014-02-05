@@ -54,7 +54,7 @@
           <table align="left">
             <tr>
               <td>
-                <%= image_tag 'RyanFacingRight.jpeg', :width => '35', :class => 'logo' %>
+                <%= image_tag data.site.base+'/images/RyanFacingRight.jpeg', :width => '35', :class => 'logo' %>
                 <% @pages = current_page.children %>
                 <% for page in @pages %>
                   <h2 name="<%=page.data.title.gsub(/\s+/, '')%>" id="<%=page.data.title.gsub(/\s+/, '')%>" ><%= page.data.title %></h2>
