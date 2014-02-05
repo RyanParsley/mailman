@@ -1,5 +1,5 @@
 require "./lib/email"
-ENV['MANDRILL_APIKEY'] = 'lF-Pq1M5RPbrphuAgx_4LA'
+import ".env"
 
 SSH_USER = 'root'
 SSH_HOST = 'www.example.com'
