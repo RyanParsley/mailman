@@ -44,7 +44,6 @@ When you are done, generate html in the build folder with:
 
 ```
 middleman build
-
 ``` 
 ## Deploy
 
