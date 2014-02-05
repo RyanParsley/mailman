@@ -5,6 +5,16 @@ SSH_HOST = 'www.example.com'
 SSH_DIR  = '/var/www/html/www.example.com'
 ACTIVE_EMAIL = '2013_october/index.html'
 SENDER = 'ryan.parsley@rockfishinteractive.com'
+RECIPIENT_LIST = [  
+       {  
+         :email=> "rmparsley@gmail.com",  ## this uses the email argument passed into this method
+         :name=> "Recipient1"  
+       },
+       {  
+         :email=> "ryan.parsley@rockfishinteractive.com",  ## this uses the email argument passed into this method
+         :name=> "Recipient2"  
+       }    
+     ]
  
 desc "Build the website from source"
 task :build do
@@ -33,7 +43,7 @@ desc "Send a test email"
 task :send do
   puts "## Sending #{ACTIVE_EMAIL}"
   m = MyEmailer.new
-  m.rakeSend("build/#{ACTIVE_EMAIL}", SENDER)
+  m.rakeSend("build/#{ACTIVE_EMAIL}", SENDER, RECIPIENT_LIST)
 end
 
 desc "Build and send"
