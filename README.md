@@ -38,6 +38,26 @@ title: This is the title of the first article
 This is some content.
 ```
 
-When you are done, doubleclick the "build.command" file at the root of
-the project. That will create a well formed document in the "build"
-folder that you can paste into the Constant Contact form.
+## Build
+
+When you are done, generate html in the build folder with:
+
+```
+middleman build
+
+``` 
+## Deploy
+
+Push html to GitHub Pages with:
+
+```
+middleman deploy
+```
+
+## Send
+
+I've set up a rake task for sending email via Mandrill:
+
+```
+rake send
+```
