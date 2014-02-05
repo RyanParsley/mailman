@@ -2,7 +2,7 @@
 
 ## makes developing ~~websites~~ email simple
 
-Mailman is a configuration of the [Middleman](http://middlemanapp.com/) static site generator geared towards creating HTML email. Now, you can use all the modern affordances that you've come to expect on the web (Haml, Sass, Markdown...) to create HTML email. Then, let the robots make it ugly and bullet restistant by injecting inline styles into the appropriate places with [premailer](http://premailer.dialect.ca/). Next, publish to [GitHub Pages](http://pages.github.com/) with [Middleman's deploy extension](https://github.com/tvaughan/middleman-deploy) so you have web accessible assets and send test emails via [Mandrill](http://mandrill.com/). All without leaving the comfort of your command line.
+Mailman is a configuration of the [Middleman](http://middlemanapp.com/) static site generator geared towards creating HTML email. Now, you can use all the modern affordances that you've come to expect on the web (Haml, Sass, Markdown...) to create HTML email. Then, let the robots make it ugly and bullet restistant by injecting inline styles into the appropriate places with [Premailer](http://premailer.dialect.ca/). Next, publish to [GitHub Pages](http://pages.github.com/) with [Middleman's deploy extension](https://github.com/tvaughan/middleman-deploy) so you have web accessible assets and send test emails via [Mandrill](http://mandrill.com/). All without leaving the comfort of your command line.
 
 ## For convenience sake
 
