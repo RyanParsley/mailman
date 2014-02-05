@@ -15,3 +15,7 @@
 
 # Ignore DS_Store
 .DS_Store
+.powrc
+.powenv
+.ruby-gemset
+.ruby-version
