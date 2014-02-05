@@ -1,121 +1,916 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Email Test</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/email.css" />
+    <style>
+<![CDATA[
+/**********************************************
+ * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
+ **********************************************/
+
+/* Client-specific Styles & Reset */
+
+ #outlook a { 
+   padding:0; 
+ } 
+
+ body{ 
+   width:100% !important; 
+   min-width: 100%;
+   -webkit-text-size-adjust:100%; 
+   -ms-text-size-adjust:100%; 
+   margin:0; 
+   padding:0;
+ }
+
+ .ExternalClass { 
+   width:100%;
+ } 
+
+ .ExternalClass, 
+ .ExternalClass p, 
+ .ExternalClass span, 
+ .ExternalClass font, 
+ .ExternalClass td, 
+ .ExternalClass div { 
+   line-height: 100%; 
+ } 
+
+ #backgroundTable { 
+   margin:0; 
+   padding:0; 
+   width:100% !important; 
+   line-height: 100% !important; 
+ }
+
+ img { 
+   outline:none; 
+   text-decoration:none; 
+   -ms-interpolation-mode: bicubic;
+   width: auto;
+   max-width: 100%; 
+   float: left; 
+   clear: both; 
+   display: block;
+ }
+
+ center {
+   width: 100%;
+   min-width: 580px;
+ }
+
+ a img { 
+   border: none;
+ }
+
+ p {
+   margin: 0 0 0 10px;
+ }
+
+ table {
+   border-spacing: 0;
+   border-collapse: collapse;
+ }
+
+ td { 
+   word-break: break-word;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+   hyphens: auto;
+   border-collapse: collapse !important; 
+ }
+
+ table, tr, td {
+   padding: 0;
+   vertical-align: top;
+   text-align: left;
+ }
+
+ hr {
+   color: #d9d9d9; 
+   background-color: #d9d9d9; 
+   height: 1px; 
+   border: none;
+ }
+
+ /* Responsive Grid */
+
+ table.body {
+   height: 100%;
+   width: 100%;
+ }
+
+ table.container {
+   width: 580px;
+   margin: 0 auto;
+   text-align: inherit;
+ }
+
+ table.row { 
+   padding: 0px; 
+   width: 100%;
+   position: relative;
+ }
+
+ table.container table.row {
+   display: block;
+ }
+
+ td.wrapper {
+   padding: 10px 20px 0px 0px;
+   position: relative;
+ }
+
+ table.columns,
+ table.column {
+   margin: 0 auto;
+ }
+
+ table.columns td,
+ table.column td {
+   padding: 0px 0px 10px; 
+ }
+
+ table.columns td.sub-columns,
+ table.column td.sub-columns,
+ table.columns td.sub-column,
+ table.column td.sub-column {
+   padding-right: 10px;
+ }
+
+ td.sub-column, td.sub-columns {
+   min-width: 0px;
+ }
+
+ table.row td.last,
+ table.container td.last {
+   padding-right: 0px;
+ }
+
+ table.one { width: 30px; }
+ table.two { width: 80px; }
+ table.three { width: 130px; }
+ table.four { width: 180px; }
+ table.five { width: 230px; }
+ table.six { width: 280px; }
+ table.seven { width: 330px; }
+ table.eight { width: 380px; }
+ table.nine { width: 430px; }
+ table.ten { width: 480px; }
+ table.eleven { width: 530px; }
+ table.twelve { width: 580px; }
+
+ table.one center { min-width: 30px; }
+ table.two center { min-width: 80px; }
+ table.three center { min-width: 130px; }
+ table.four center { min-width: 180px; }
+ table.five center { min-width: 230px; }
+ table.six center { min-width: 280px; }
+ table.seven center { min-width: 330px; }
+ table.eight center { min-width: 380px; }
+ table.nine center { min-width: 430px; }
+ table.ten center { min-width: 480px; }
+ table.eleven center { min-width: 530px; }
+ table.twelve center { min-width: 580px; }
+
+ table.one .panel center { min-width: 10px; }
+ table.two .panel center { min-width: 60px; }
+ table.three .panel center { min-width: 110px; }
+ table.four .panel center { min-width: 160px; }
+ table.five .panel center { min-width: 210px; }
+ table.six .panel center { min-width: 260px; }
+ table.seven .panel center { min-width: 310px; }
+ table.eight .panel center { min-width: 360px; }
+ table.nine .panel center { min-width: 410px; }
+ table.ten .panel center { min-width: 460px; }
+ table.eleven .panel center { min-width: 510px; }
+ table.twelve .panel center { min-width: 560px; }
+
+ .body .columns td.one,
+ .body .column td.one { width: 8.333333%; }
+ .body .columns td.two,
+ .body .column td.two { width: 16.666666%; }
+ .body .columns td.three,
+ .body .column td.three { width: 25%; }
+ .body .columns td.four,
+ .body .column td.four { width: 33.333333%; }
+ .body .columns td.five,
+ .body .column td.five { width: 41.666666%; }
+ .body .columns td.six,
+ .body .column td.six { width: 50%; }
+ .body .columns td.seven,
+ .body .column td.seven { width: 58.333333%; }
+ .body .columns td.eight,
+ .body .column td.eight { width: 66.666666%; }
+ .body .columns td.nine,
+ .body .column td.nine { width: 75%; }
+ .body .columns td.ten,
+ .body .column td.ten { width: 83.333333%; }
+ .body .columns td.eleven,
+ .body .column td.eleven { width: 91.666666%; }
+ .body .columns td.twelve,
+ .body .column td.twelve { width: 100%; }
+
+ td.offset-by-one { padding-left: 50px; }
+ td.offset-by-two { padding-left: 100px; }
+ td.offset-by-three { padding-left: 150px; }
+ td.offset-by-four { padding-left: 200px; }
+ td.offset-by-five { padding-left: 250px; }
+ td.offset-by-six { padding-left: 300px; }
+ td.offset-by-seven { padding-left: 350px; }
+ td.offset-by-eight { padding-left: 400px; }
+ td.offset-by-nine { padding-left: 450px; }
+ td.offset-by-ten { padding-left: 500px; }
+ td.offset-by-eleven { padding-left: 550px; }
+
+ td.expander {
+   visibility: hidden;
+   width: 0px;
+   padding: 0 !important;
+ }
+
+ table.columns .text-pad,
+ table.column .text-pad {
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
+ table.columns .left-text-pad,
+ table.columns .text-pad-left,
+ table.column .left-text-pad,
+ table.column .text-pad-left {
+   padding-left: 10px;
+ }
+
+ table.columns .right-text-pad,
+ table.columns .text-pad-right,
+ table.column .right-text-pad,
+ table.column .text-pad-right {
+   padding-right: 10px;
+ }
+
+ /* Block Grid */
+
+ .block-grid {
+   width: 100%;
+   max-width: 580px;
+ }
+
+ .block-grid td {
+   display: inline-block;
+   padding:10px;
+ }
+
+ .two-up td {
+   width:270px;
+ }
+
+ .three-up td {
+   width:173px;
+ }
+
+ .four-up td {
+   width:125px;
+ }
+
+ .five-up td {
+   width:96px;
+ }
+
+ .six-up td {
+   width:76px;
+ }
+
+ .seven-up td {
+   width:62px;
+ }
+
+ .eight-up td {
+   width:52px;
+ }
+
+ /* Alignment & Visibility Classes */
+
+ table.center, td.center {
+   text-align: center;
+ }
+
+ h1.center,
+ h2.center,
+ h3.center,
+ h4.center,
+ h5.center,
+ h6.center {
+   text-align: center;
+ }
+
+ span.center {
+   display: block;
+   width: 100%;
+   text-align: center;
+ }
+
+ img.center {
+   margin: 0 auto;
+   float: none;
+ }
+
+ .show-for-small,
+ .hide-for-desktop {
+   display: none;
+ }
+
+ /* Typography */
+
+ body, table.body, h1, h2, h3, h4, h5, h6, p, td { 
+   color: #222222;
+   font-family: "Helvetica", "Arial", sans-serif; 
+   font-weight: normal; 
+   padding:0; 
+   margin: 0;
+   text-align: left; 
+   line-height: 1.3;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   word-break: normal;
+ }
+
+ h1 {font-size: 40px;}
+ h2 {font-size: 36px;}
+ h3 {font-size: 32px;}
+ h4 {font-size: 28px;}
+ h5 {font-size: 24px;}
+ h6 {font-size: 20px;}
+ body, table.body, p, td {font-size: 14px;line-height:19px;}
+
+ p.lead, p.lede, p.leed {
+   font-size: 18px;
+   line-height:21px;
+ }
+
+ p { 
+   margin-bottom: 10px;
+ }
+
+ small {
+   font-size: 10px;
+ }
+
+ a {
+   color: #2ba6cb; 
+   text-decoration: none;
+ }
+
+ a:hover { 
+   color: #2795b6 !important;
+   }
+
+   a:active { 
+     color: #2795b6 !important;
+     }
+
+     a:visited { 
+       color: #2ba6cb !important;
+       }
+
+       h1 a, 
+       h2 a, 
+       h3 a, 
+       h4 a, 
+       h5 a, 
+       h6 a {
+         color: #2ba6cb;
+       }
+
+       h1 a:active, 
+       h2 a:active,  
+       h3 a:active, 
+       h4 a:active, 
+       h5 a:active, 
+       h6 a:active { 
+         color: #2ba6cb !important; 
+       } 
+
+       h1 a:visited, 
+       h2 a:visited,  
+       h3 a:visited, 
+       h4 a:visited, 
+       h5 a:visited, 
+       h6 a:visited { 
+         color: #2ba6cb !important; 
+       } 
+
+       /* Panels */
+
+       .panel {
+         background: #f2f2f2;
+         border: 1px solid #d9d9d9;
+         padding: 10px !important;
+       }
+
+       .sub-grid table {
+         width: 100%;
+       }
+
+       .sub-grid td.sub-columns {
+         padding-bottom: 0;
+       }
+
+       /* Buttons */
+
+       table.button,
+       table.tiny-button,
+       table.small-button,
+       table.medium-button,
+       table.large-button {
+         width: 100%;
+         overflow: hidden;
+       }
+
+       table.button td,
+       table.tiny-button td,
+       table.small-button td,
+       table.medium-button td,
+       table.large-button td {
+         display: block;
+         width: auto !important;
+         text-align: center;
+         background: #2ba6cb;
+         border: 1px solid #2284a1;
+         color: #ffffff;
+         padding: 8px 0;
+       }
+
+       table.tiny-button td {
+         padding: 5px 0 4px;
+       }
+
+       table.small-button td {
+         padding: 8px 0 7px;
+       }
+
+       table.medium-button td {
+         padding: 12px 0 10px;
+       }
+
+       table.large-button td {
+         padding: 21px 0 18px;
+       }
+
+       table.button td a,
+       table.tiny-button td a,
+       table.small-button td a,
+       table.medium-button td a,
+       table.large-button td a {
+         font-weight: bold;
+         text-decoration: none;
+         font-family: Helvetica, Arial, sans-serif;
+         color: #ffffff;
+         font-size: 16px;
+       }
+
+       table.tiny-button td a {
+         font-size: 12px;
+         font-weight: normal;
+       }
+
+       table.small-button td a {
+         font-size: 16px;
+       }
+
+       table.medium-button td a {
+         font-size: 20px;
+       }
+
+       table.large-button td a {
+         font-size: 24px;
+       }
+
+       table.button:hover td,
+       table.button:visited td,
+       table.button:active td {
+         background: #2795b6 !important;
+       }
+
+       table.button:hover td a,
+       table.button:visited td a,
+       table.button:active td a {
+         color: #fff !important;
+       }
+
+       table.button:hover td,
+       table.tiny-button:hover td,
+       table.small-button:hover td,
+       table.medium-button:hover td,
+       table.large-button:hover td {
+         background: #2795b6 !important;
+       }
+
+       table.button:hover td a,
+       table.button:active td a,
+       table.button td a:visited,
+       table.tiny-button:hover td a,
+       table.tiny-button:active td a,
+       table.tiny-button td a:visited,
+       table.small-button:hover td a,
+       table.small-button:active td a,
+       table.small-button td a:visited,
+       table.medium-button:hover td a,
+       table.medium-button:active td a,
+       table.medium-button td a:visited,
+       table.large-button:hover td a,
+       table.large-button:active td a,
+       table.large-button td a:visited {
+         color: #ffffff !important; 
+       }
+
+       table.secondary td {
+         background: #e9e9e9;
+         border-color: #d0d0d0;
+         color: #555;
+       }
+
+       table.secondary td a {
+         color: #555;
+       }
+
+       table.secondary:hover td {
+         background: #d0d0d0 !important;
+         color: #555;
+       }
+
+       table.secondary:hover td a,
+       table.secondary td a:visited,
+       table.secondary:active td a {
+         color: #555 !important;
+       }
+
+       table.success td {
+         background: #5da423;
+         border-color: #457a1a;
+       }
+
+       table.success:hover td {
+         background: #457a1a !important;
+       }
+
+       table.alert td {
+         background: #c60f13;
+         border-color: #970b0e;
+       }
+
+       table.alert:hover td {
+         background: #970b0e !important;
+       }
+
+       table.radius td {
+         -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+         border-radius: 3px;
+       }
+
+       table.round td {
+         -webkit-border-radius: 500px;
+         -moz-border-radius: 500px;
+         border-radius: 500px;
+       }
+
+       /* Outlook First */
+
+       body.outlook p {
+         display: inline !important;
+       }
+
+       /*  Media Queries */
+
+       @media only screen and (max-width: 600px) {
+
+         table[class="body"] img {
+           width: auto !important;
+           height: auto !important;
+         }
+
+         table[class="body"] center {
+           min-width: 0 !important;
+         }
+
+         table[class="body"] .container {
+           width: 95% !important;
+         }
+
+         table[class="body"] .row {
+           width: 100% !important;
+           display: block !important;
+         }
+
+         table[class="body"] .wrapper {
+           display: block !important;
+           padding-right: 0 !important;
+         }
+
+         table[class="body"] .columns,
+         table[class="body"] .column {
+           table-layout: fixed !important;
+           float: none !important;
+           width: 100% !important;
+           padding-right: 0px !important;
+           padding-left: 0px !important;
+           display: block !important;
+         }
+
+         table[class="body"] .wrapper.first .columns,
+         table[class="body"] .wrapper.first .column {
+           display: table !important;
+         }
+
+         table[class="body"] table.columns td,
+         table[class="body"] table.column td {
+           width: 100% !important;
+         }
+
+         table[class="body"] .columns td.one,
+         table[class="body"] .column td.one { width: 8.333333% !important; }
+         table[class="body"] .columns td.two,
+         table[class="body"] .column td.two { width: 16.666666% !important; }
+         table[class="body"] .columns td.three,
+         table[class="body"] .column td.three { width: 25% !important; }
+         table[class="body"] .columns td.four,
+         table[class="body"] .column td.four { width: 33.333333% !important; }
+         table[class="body"] .columns td.five,
+         table[class="body"] .column td.five { width: 41.666666% !important; }
+         table[class="body"] .columns td.six,
+         table[class="body"] .column td.six { width: 50% !important; }
+         table[class="body"] .columns td.seven,
+         table[class="body"] .column td.seven { width: 58.333333% !important; }
+         table[class="body"] .columns td.eight,
+         table[class="body"] .column td.eight { width: 66.666666% !important; }
+         table[class="body"] .columns td.nine,
+         table[class="body"] .column td.nine { width: 75% !important; }
+         table[class="body"] .columns td.ten,
+         table[class="body"] .column td.ten { width: 83.333333% !important; }
+         table[class="body"] .columns td.eleven,
+         table[class="body"] .column td.eleven { width: 91.666666% !important; }
+         table[class="body"] .columns td.twelve,
+         table[class="body"] .column td.twelve { width: 100% !important; }
+
+         table[class="body"] td.offset-by-one,
+         table[class="body"] td.offset-by-two,
+         table[class="body"] td.offset-by-three,
+         table[class="body"] td.offset-by-four,
+         table[class="body"] td.offset-by-five,
+         table[class="body"] td.offset-by-six,
+         table[class="body"] td.offset-by-seven,
+         table[class="body"] td.offset-by-eight,
+         table[class="body"] td.offset-by-nine,
+         table[class="body"] td.offset-by-ten,
+         table[class="body"] td.offset-by-eleven {
+           padding-left: 0 !important;
+         }
+
+         table[class="body"] table.columns td.expander {
+           width: 1px !important;
+         }
+
+         table[class="body"] .right-text-pad,
+         table[class="body"] .text-pad-right {
+           padding-left: 10px !important;
+         }
+
+         table[class="body"] .left-text-pad,
+         table[class="body"] .text-pad-left {
+           padding-right: 10px !important;
+         }
+
+         table[class="body"] .hide-for-small,
+         table[class="body"] .show-for-desktop {
+           display: none !important;
+         }
+
+         table[class="body"] .show-for-small,
+         table[class="body"] .hide-for-desktop {
+           display: inherit !important;
+         }
+       }
+
+]]>
+    </style>
+    <style>
+<![CDATA[
+
+table.facebook td {
+  background: #3b5998;
+  border-color: #2d4473;
+}
+
+table.facebook:hover td {
+  background: #2d4473 !important;
+}
+
+table.twitter td {
+  background: #00acee;
+  border-color: #0087bb;
+}
+
+table.twitter:hover td {
+  background: #0087bb !important;
+}
+
+table.google-plus td {
+  background-color: #DB4A39;
+  border-color: #CC0000;
+}
+
+table.google-plus:hover td {
+  background: #CC0000 !important;
+}
+
+.template-label {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.callout .panel {
+  background: #ECF8FF;
+  border-color: #b9e5ff;
+}
+
+.header {
+  background: #999999;
+}
+
+.footer .wrapper {
+  background: #ebebeb;
+}
+
+.footer h5 {
+  padding-bottom: 10px;
+}
+
+table.columns .text-pad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table.columns .left-text-pad {
+  padding-left: 10px;
+}
+
+table.columns .right-text-pad {
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  table[class="body"] .right-text-pad {
+    padding-left: 10px !important;
+  }
+
+  table[class="body"] .left-text-pad {
+    padding-right: 10px !important;
+  }
+}
+
+]]>
+    </style>
   </head>
-  <body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; margin: 0; padding: 0;">
+  <body style="width: 100% !important; min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0; padding: 0;">
+<table class="body" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; height: 100%; width: 100%; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;">
+      <center style="width: 100%; min-width: 580px;">
 
 
+        <table class="row header" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; background: #999999; padding: 0px;" bgcolor="#999999"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="center" align="center" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" valign="top">
+              <center style="width: 100%; min-width: 580px;">
 
-<table class="head-wrap" bgcolor="#999999" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
-    <td class="header container" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; padding: 0;">
-      <div class="content" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 600px; display: block; margin: 0 auto; padding: 15px;">
-        <table bgcolor="#999999" class="" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="http://placehold.it/200x50/" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 100%; margin: 0; padding: 0;" /></td>
-            <td align="right" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><h6 class="collapse" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #444; font-weight: 900; font-size: 14px; text-transform: uppercase; margin: 0; padding: 0;">Sidebar Hero</h6></td>
-          </tr></table></div>
-    </td>
-    <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
-  </tr></table><table class="body-wrap" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
-    <td class="container" bgcolor="#FFFFFF" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; padding: 0;">
-      
-      <div class="content" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 600px; display: block; margin: 0 auto; padding: 15px;">
-        <table style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
-              <h1 id="super-awesome-title" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 200; font-size: 44px; margin: 0 0 15px; padding: 0;">Super awesome title!</h1>
+                <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
 
-<h2 id="nearly-as-awesome-subtitle" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 200; font-size: 37px; margin: 0 0 15px; padding: 0;">Nearly as awesome subtitle</h2>
+                      <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="six sub-columns" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; min-width: 0px; width: 50%; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 10px 10px 0px;" align="left" valign="top">
+                            <img src="http://placehold.it/200x50" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: left; clear: both; display: block;" align="left" /></td>
+                          <td class="six sub-columns last" align="right" style="text-align: right; vertical-align: middle; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; min-width: 0px; width: 50%; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" valign="middle">
+                            <span class="template-label" style="color: #ffffff; font-weight: bold; font-size: 11px;">HERO</span>
+                          </td>
+                          <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
 
-<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;"><img alt="Images need an alt" src="http://placehold.it/900x450/" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 100%; margin: 0; padding: 0;" /></p>
+                        </tr></table></td>
+                  </tr></table></center>
+            </td>
+          </tr></table><br /><table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top">
 
-<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">But you don't have to. This space offers a place to put content not
+              
+              <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
+
+                    <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+
+                          <h1 id="super-awesome-title" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 40px; margin: 0; padding: 0;" align="left">Super awesome title!</h1>
+
+<h2 id="nearly-as-awesome-subtitle" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 36px; margin: 0; padding: 0;" align="left">Nearly as awesome subtitle</h2>
+
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left"><img alt="Images need an alt" src="http://placehold.it/900x450/" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: left; clear: both; display: block;" align="left" /></p>
+
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">But you don't have to. This space offers a place to put content not
 in one of the linked files. This shows what happens if you have a large
 main story.</p>
 
-<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;"><a href="http://google.com" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; margin: 0; padding: 0;">View the full story</a></p>
-
-            </td>
-          </tr></table></div>
-
-      
-      <div class="column-wrap" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 600px !important; margin: 0 auto; padding: 0;">
-        <div class="column" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 300px; float: left; margin: 0; padding: 0;">
-          <table align="left" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 15px;">
-                <img width="35" class="logo" src="http://ryanparsley.github.io/mailman/images/RyanFacingRight.jpeg" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 100%; margin: 0; padding: 0;" /><h2 name="Section1Title" id="Section1Title" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 200; font-size: 37px; margin: 0 0 15px; padding: 0;">Section 1 Title</h2>
-                  <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">All-over announcing sweet bigger best unlimited pure. For zippy to oily go disposable hot real quick economical value vinyl. Well compare bonus feel wholesome much inside. Wherever a appearance chosen to however. Bonus know roasted supreme.</p>
-
-<ul style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;"><li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0 0 0 5px; padding: 0; list-style: inside;">Bullet 1</li>
-  <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0 0 0 5px; padding: 0; list-style: inside;">Bullet 2</li>
-  <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0 0 0 5px; padding: 0; list-style: inside;">Bullet 3</li>
-</ul><p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">Goodness better picky pay by. Magically ocean high big grown brighter postage why silky are money admire. Juicy terrific way goodness power compact it's smile escape appearance smart most. Terrific genuine moist polished tempt more anything love disposable announcing. The any sold survey picky mouthwatering makes powerful splash aroma citrus. Valuable tighter absorbent.</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left"><a href="http://google.com" style="color: #2ba6cb; text-decoration: none;">View the full story</a></p>
 
 
-                  
-                
-                  <h2 name="Section2Title" id="Section2Title" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 200; font-size: 37px; margin: 0 0 15px; padding: 0;">Section 2 Title</h2>
-                  <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">High-tech don't superior fights dual blast have mothers intense permanent goodbye. Look big outstanding healthy ordinary money compact talking families. Elegent powerful can't advertising comfort pay screamin' effective need yet makes. One now aroma chance inside secret wholesome classic settle unique buy now. Aromatic flavored our a secret guaranteed quality spend.</p>
+                        </td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table><table class="row callout" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
 
-<h3 id="subheading-for-section-2" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 500; font-size: 27px; margin: 0 0 15px; padding: 0;">Subheading for section 2</h3>
+                    <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #ECF8FF; margin: 0; padding: 10px; border: 1px solid #b9e5ff;" align="left" bgcolor="#ECF8FF" valign="top">
 
-<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">Tasty soaking takes great as below secret. Squeezable commercial deeply agree. Take blast buttery chunky than agree power. Wholesome fresh spend. Families healthy plush provocative world's credit-card millions polished mouthwatering guaranteed. Takes world's hurry makes kids secure any.</p>
+                          <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Phasellus dictum sapien a neque luctus cursus. Pellentesque sem dolor, fringilla et pharetra vitae. <a href="#" style="color: #2ba6cb; text-decoration: none;">Click it! ��</a></p>
 
-<ol style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Ordered list item 1</li>
-  <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Ordered list item 2</li>
-  <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Ordered list item 3</li>
-</ol><p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">Better by thick well. Free introducing have energy postage to. Market energy whiter wholesome. Absorbent proven ocean but wherever super can't. Ultimate and prevents miracle.</p>
+                        </td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table><table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
 
-                  
-                
-              </td>
-            </tr></table></div>
-        <div class="column" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 300px; float: left; margin: 0; padding: 0;">
-          <table align="left" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 15px;">
-                <ul class="sidebar" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; display: block; background: #ebebeb; margin: 0 0 10px; padding: 0; list-style: none;"><li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block; margin: 0; padding: 0; list-style: inside;">
-                      <a href="#Section1Title" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #666; text-decoration: none; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #777777; border-top-style: solid; border-top-width: 1px; border-top-color: #FFFFFF; display: block; margin: 0; padding: 10px 16px;">
-                        <h5 style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 900; font-size: 17px; margin: 0; padding: 0;">Section 1 Title</h5>
-                      </a>
-                    </li>
-                  
-                    <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block; margin: 0; padding: 0; list-style: inside;">
-                      <a href="#Section2Title" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #666; text-decoration: none; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #777777; border-top-style: solid; border-top-width: 1px; border-top-color: #FFFFFF; display: block; margin: 0; padding: 10px 16px;">
-                        <h5 style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #000; font-weight: 900; font-size: 17px; margin: 0; padding: 0;">Section 2 Title</h5>
-                      </a>
-                    </li>
-                  
-                </ul><table bgcolor="" class="social" width="100%" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; background: #ebebeb; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 15px;">
-                      <table align="left" width="100%" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 15px;">
-                            <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">October 2, 2013</p>
-                            <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">Volume: 1 - Issue:  1</p>
-                            <h6 class="" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #444; font-weight: 900; font-size: 14px; text-transform: uppercase; margin: 0 0 15px; padding: 0;">Connect with Us:</h6>
-                            <p class="" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">
-                              <a href="http://facebook.com" class="soc-btn fb" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #FFF; font-size: 12px; text-decoration: none; font-weight: bold; display: block; text-align: center; background-color: #3B5998 !important; margin: 0 0 10px; padding: 3px 7px;">Facebook</a>
-                              <a href="https://twitter.com/rockfish" class="soc-btn tw" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #FFF; font-size: 12px; text-decoration: none; font-weight: bold; display: block; text-align: center; background-color: #1daced !important; margin: 0 0 10px; padding: 3px 7px;">Twitter</a> 
-                              <a href="#" class="soc-btn gp" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #FFF; font-size: 12px; text-decoration: none; font-weight: bold; display: block; text-align: center; background-color: #DB4A39 !important; margin: 0 0 10px; padding: 3px 7px;">Google+</a>
-                            </p>
-                            <h6 class="" style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 1.1; color: #444; font-weight: 900; font-size: 14px; text-transform: uppercase; margin: 0 0 15px; padding: 0;">Contact Info:</h6>
-                            <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">Phone: <strong style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">513.381.1583</strong><br style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;" />
-                            Email: <strong style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><a href="mailto:ryan.parsley@rockfishdigital.com" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; margin: 0; padding: 0;">ryan.parsley@rockfishdigital.com</a></strong></p>
-                          </td>
-                        </tr></table></td>
-                  </tr></table></td>
-            </tr></table></div>
-        <div class="clear" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block; clear: both; margin: 0; padding: 0;"></div>
-      </div>
+                    <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+
+                          
+                          
+                            <h2 name="Section1Title" id="Section1Title" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 36px; margin: 0; padding: 0;" align="left">Section 1 Title</h2>
+                            <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">All-over announcing sweet bigger best unlimited pure. For zippy to oily go disposable hot real quick economical value vinyl. Well compare bonus feel wholesome much inside. Wherever a appearance chosen to however. Bonus know roasted supreme.</p>
+
+<ul><li>Bullet 1</li>
+  <li>Bullet 2</li>
+  <li>Bullet 3</li>
+</ul><p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Goodness better picky pay by. Magically ocean high big grown brighter postage why silky are money admire. Juicy terrific way goodness power compact it's smile escape appearance smart most. Terrific genuine moist polished tempt more anything love disposable announcing. The any sold survey picky mouthwatering makes powerful splash aroma citrus. Valuable tighter absorbent.</p>
+
+
+                            
+                          
+                            <h2 name="Section2Title" id="Section2Title" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 36px; margin: 0; padding: 0;" align="left">Section 2 Title</h2>
+                            <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">High-tech don't superior fights dual blast have mothers intense permanent goodbye. Look big outstanding healthy ordinary money compact talking families. Elegent powerful can't advertising comfort pay screamin' effective need yet makes. One now aroma chance inside secret wholesome classic settle unique buy now. Aromatic flavored our a secret guaranteed quality spend.</p>
+
+<h3 id="subheading-for-section-2" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 32px; margin: 0; padding: 0;" align="left">Subheading for section 2</h3>
+
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Tasty soaking takes great as below secret. Squeezable commercial deeply agree. Take blast buttery chunky than agree power. Wholesome fresh spend. Families healthy plush provocative world's credit-card millions polished mouthwatering guaranteed. Takes world's hurry makes kids secure any.</p>
+
+<ol><li>Ordered list item 1</li>
+  <li>Ordered list item 2</li>
+  <li>Ordered list item 3</li>
+</ol><p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Better by thick well. Free introducing have energy postage to. Market energy whiter wholesome. Absorbent proven ocean but wherever super can't. Ultimate and prevents miracle.</p>
+
+                            
+                          
+
+                        </td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table><table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
+
+                    <table class="three columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 130px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+
+                          <table class="button" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; overflow: hidden; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #ffffff; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; display: block; width: auto !important; background: #2ba6cb; margin: 0; padding: 8px 0; border: 1px solid #2284a1;" align="center" bgcolor="#2ba6cb" valign="top">
+                                <a href="#" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Helvetica, Arial, sans-serif; font-size: 16px;">Click Me!</a>
+                              </td>
+                            </tr></table></td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table><table class="row footer" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #ebebeb; margin: 0; padding: 10px 20px 0px 0px;" align="left" bgcolor="#ebebeb" valign="top">
+
+                    <table class="six columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 280px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="left-text-pad" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px 10px;" align="left" valign="top">
+
+                          <h5 style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 24px; margin: 0; padding: 0 0 10px;" align="left">Connect With Us:</h5>
+
+                          <table class="tiny-button facebook" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; overflow: hidden; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #ffffff; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; display: block; width: auto !important; background: #3b5998; margin: 0; padding: 5px 0 4px; border: 1px solid #2d4473;" align="center" bgcolor="#3b5998" valign="top">
+                                <a href="http://facebook.com" style="color: #ffffff; text-decoration: none; font-weight: normal; font-family: Helvetica, Arial, sans-serif; font-size: 12px;">Facebook</a>
+                              </td>
+                            </tr></table><br /><table class="tiny-button twitter" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; overflow: hidden; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #ffffff; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; display: block; width: auto !important; background: #00acee; margin: 0; padding: 5px 0 4px; border: 1px solid #0087bb;" align="center" bgcolor="#00acee" valign="top">
+                                <a href="https://twitter.com/rockfish" style="color: #ffffff; text-decoration: none; font-weight: normal; font-family: Helvetica, Arial, sans-serif; font-size: 12px;">Twitter</a>
+                              </td>
+                            </tr></table><br /><table class="tiny-button google-plus" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; overflow: hidden; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #ffffff; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; display: block; width: auto !important; background: #DB4A39; margin: 0; padding: 5px 0 4px; border: 1px solid #cc0000;" align="center" bgcolor="#DB4A39" valign="top">
+                                <a href="#" style="color: #ffffff; text-decoration: none; font-weight: normal; font-family: Helvetica, Arial, sans-serif; font-size: 12px;">Google +</a>
+                              </td>
+                            </tr></table></td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                  <td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #ebebeb; margin: 0; padding: 10px 0px 0px;" align="left" bgcolor="#ebebeb" valign="top">
+
+                    <table class="six columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 280px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="last right-text-pad" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="top">
+                          <h5 style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 24px; margin: 0; padding: 0 0 10px;" align="left">Contact Info:</h5>
+                          <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Phone: 513.381.1583</p>
+                          <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Email: <a href="mailto:ryan.parsley@rockfishdigital.com" style="color: #2ba6cb; text-decoration: none;">ryan.parsley@rockfishdigital.com</a></p>
+                        </td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table><table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; position: relative; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="top">
+
+                    <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td align="center" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" valign="top">
+                          <center style="width: 100%; min-width: 580px;">
+                            <p style="text-align: center; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="center"><a href="#" style="color: #2ba6cb; text-decoration: none;">Terms</a> | <a href="#" style="color: #2ba6cb; text-decoration: none;">Privacy</a> | <a href="#" style="color: #2ba6cb; text-decoration: none;">Unsubscribe</a></p>
+                          </center>
+                        </td>
+                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="top"></td>
+                      </tr></table></td>
+                </tr></table></td>
+          </tr></table></center>
     </td>
-    <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
-  </tr></table><table class="footer-wrap" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; clear: both !important; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
-    <td class="container" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; padding: 0;">
-      <div class="content" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; max-width: 600px; display: block; margin: 0 auto; padding: 15px;">
-        <table style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; width: 100%; margin: 0; padding: 0;"><tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><td align="center" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
-              <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; margin: 0 0 10px; padding: 0;">
-              <a href="#" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; margin: 0; padding: 0;">Terms</a> |
-              <a href="#" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; margin: 0; padding: 0;">Privacy</a> |
-              <a href="#" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; margin: 0; padding: 0;"><unsubscribe style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Unsubscribe</unsubscribe></a>
-              </p>
-            </td>
-          </tr></table></div>
-    </td>
-    <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"></td>
   </tr></table></body>
 </html>
