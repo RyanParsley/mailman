@@ -6,7 +6,7 @@ Mailman is a configuration of the [Middleman](http://middlemanapp.com/) static s
 
 ## For convenience sake
 
-I created a "build.command" file so that people who are "terminal adverse" can build from finder. This can be a little fidgity if you use multiple version of ruby. You'll need to adjust the shebang appropriately for your environment.
+I created a "build.command" file so that people who are "terminal adverse" can build from finder. This can be a little fidgity if you use multiple versions of ruby (RVM). You'll need to adjust the shebang appropriately for your environment.
 
 ## Basic use
 
