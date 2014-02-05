@@ -38,14 +38,14 @@ title: This is the title of the first article
 This is some content.
 ```
 
-## Build
+### Build
 
 When you are done, generate html in the build folder with:
 
 ```
 middleman build
 ``` 
-## Deploy
+### Deploy
 
 Push html to GitHub Pages with:
 
@@ -53,10 +53,24 @@ Push html to GitHub Pages with:
 middleman deploy
 ```
 
-## Send
+### Send
 
 I've set up a rake task for sending email via Mandrill:
 
 ```
 rake send
 ```
+
+## Setup/ Configuration
+
+Clone this repo locally and follow along with general [documentation for Middleman](http://middlemanapp.com/).
+
+### data/site.yml
+
+This is where you configure test data such as Twitter Urls or contact
+information to be used in the email campaign.
+
+### Rakefile
+
+This is where you set your Mandrill api key and other variables that
+allow you to send via the Mandrill service.
