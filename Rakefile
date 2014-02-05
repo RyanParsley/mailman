@@ -4,6 +4,7 @@ SSH_USER = 'root'
 SSH_HOST = 'www.example.com'
 SSH_DIR  = '/var/www/html/www.example.com'
 ACTIVE_EMAIL = '2013_october/index.html'
+SENDER = 'ryan.parsley@rockfishinteractive.com'
  
 desc "Build the website from source"
 task :build do
@@ -32,6 +33,10 @@ desc "Send a test email"
 task :send do
   puts "## Sending #{ACTIVE_EMAIL}"
   m = MyEmailer.new
-  m.rakeSend("build/#{ACTIVE_EMAIL}", "ryan.parsley@rockfishinteractive.com")
+  m.rakeSend("build/#{ACTIVE_EMAIL}", SENDER)
+end
+
+desc "Build and send"
+task :gen_send => [:build, :send] do
 end
 
