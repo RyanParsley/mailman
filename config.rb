@@ -12,7 +12,7 @@ class MySinatra < Sinatra::Base
   get "/" do
     "Hello World (Sinatra)"
   end
-  get '/:url' do
+  get '/:url/' do
     m = MyEmailer.new
     m.send(params[:url], "ryan.parsley@rockfishinteractive.com")
     "Email Sent"           ## Sinatra likes to print something out .. so this
@@ -23,17 +23,9 @@ map "/send" do
   run MySinatra
 end
 
-### 
-# Compass
-###
-# Susy grids in Compass
-# First: gem install compass-susy-plugin
-# require 'susy'
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+activate :deploy do |deploy|
+  deploy.method = :git
+end
 
 ###
 # Page options, layouts, aliases and proxies

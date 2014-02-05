@@ -14,12 +14,41 @@ class MyEmailer
        {  
          :email=> "rmparsley@gmail.com",  ## this uses the email argument passed into this method
          :name=> "Recipient1"  
-       }  
+       },
+       {  
+         :email=> "ryan.parsley@rockfishinteractive.com",  ## this uses the email argument passed into this method
+         :name=> "Recipient2"  
+       }    
      ],  
-     :html=> Net::HTTP.get(URI.parse("http://127.0.0.1:4567/2013_october/")),  
+     :html=> Net::HTTP.get(URI.parse("http://127.0.0.1:4567/2013_october")),  
+
      :from_email=> from
     }  
     sending = m.messages.send message
     puts sending
   end
+  def rakeSend(url, from)
+    m = Mandrill::API.new
+    message = {  
+     :subject=> "Hello from the Mandrill API",  
+     :from_name=> "Your name",  
+     :text=>"Hi message, how are you?",  
+     :to=>[  
+       {  
+         :email=> "rmparsley@gmail.com",  ## this uses the email argument passed into this method
+         :name=> "Recipient1"  
+       },
+       {  
+         :email=> "ryan.parsley@rockfishinteractive.com",  ## this uses the email argument passed into this method
+         :name=> "Recipient2"  
+       }    
+     ],  
+     :html=> File.read(url).to_s,  
+
+     :from_email=> from
+    }  
+    sending = m.messages.send message
+    puts sending
+  end
+
 end

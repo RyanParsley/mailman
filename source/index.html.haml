@@ -5,3 +5,4 @@ title: Welcome to Mailman!
 %ul
   - for page in current_page.children
     %li= link_to page.data.title, page.url
+    %li= link_to "Send " + page.data.title, "/send" + page.url
