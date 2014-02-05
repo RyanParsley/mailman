@@ -6,6 +6,7 @@ date: October 2, 2013
 
 ---
 # Super awesome title!
+
 ## Nearly as awesome subtitle
 
 ![Images need an alt](http://placehold.it/900x450/)
