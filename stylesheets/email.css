@@ -1,226 +1,311 @@
-/* ------------------------------------- 
-		GLOBAL 
+/* -------------------------------------
+		GLOBAL
 ------------------------------------- */
+/* line 5, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-* { 
-	margin:0;
-	padding:0;
-}
-* { font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+/* line 11, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+img {
+  max-width: 100%; }
 
-img { 
-	max-width: 100%; 
-}
+/* line 15, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .collapse {
-	margin:0;
-	padding:0;
-}
+  margin: 0;
+  padding: 0; }
+
+/* line 20, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 body {
-	-webkit-font-smoothing:antialiased; 
-	-webkit-text-size-adjust:none; 
-	width: 100%!important; 
-	height: 100%;
-}
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  width: 100% !important;
+  height: 100%; }
 
-
-/* ------------------------------------- 
-		ELEMENTS 
+/* -------------------------------------
+		ELEMENTS
 ------------------------------------- */
-a { color: #2BA6CB;}
+/* line 30, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+a {
+  color: #2BA6CB; }
 
+/* line 34, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .btn {
-	text-decoration:none;
-	color: #FFF;
-	background-color: #666;
-	padding:10px 16px;
-	font-weight:bold;
-	margin-right:10px;
-	text-align:center;
-	cursor:pointer;
-	display: inline-block;
-}
+  text-decoration: none;
+  color: #FFF;
+  background-color: #666;
+  padding: 10px 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block; }
 
+/* line 46, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 p.callout {
-	padding:15px;
-	background-color:#ECF8FF;
-	margin-bottom: 15px;
-}
-.callout a {
-	font-weight:bold;
-	color: #2BA6CB;
-}
+  padding: 15px;
+  background-color: #ECF8FF;
+  margin-bottom: 15px; }
+  /* line 50, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  p.callout .callout a {
+    font-weight: bold;
+    color: #2BA6CB; }
 
+/* line 56, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 table.social {
-/* 	padding:15px; */
-	background-color: #ebebeb;
-	
-}
-.social .soc-btn {
-	padding: 3px 7px;
-	font-size:12px;
-	margin-bottom:10px;
-	text-decoration:none;
-	color: #FFF;font-weight:bold;
-	display:block;
-	text-align:center;
-}
-a.fb { background-color: #3B5998!important; }
-a.tw { background-color: #1daced!important; }
-a.gp { background-color: #DB4A39!important; }
-a.ms { background-color: #000!important; }
+  background-color: #ebebeb; }
+  /* line 58, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  table.social .social .soc-btn {
+    padding: 3px 7px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    display: block;
+    text-align: center; }
 
-.sidebar .soc-btn { 
-	display:block;
-	width:100%;
-}
+/* line 68, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+a.fb {
+  background-color: #3b5998 !important; }
 
-/* ------------------------------------- 
-		HEADER 
+/* line 69, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+a.tw {
+  background-color: #1daced !important; }
+
+/* line 70, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+a.gp {
+  background-color: #db4a39 !important; }
+
+/* line 71, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+a.ms {
+  background-color: black !important; }
+
+/* line 73, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.sidebar .soc-btn {
+  display: block;
+  width: 100%; }
+
+/* -------------------------------------
+		HEADER
 ------------------------------------- */
-table.head-wrap { width: 100%;}
+/* line 81, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+table.head-wrap {
+  width: 100%; }
 
-.header.container table td.logo { padding: 15px; }
-.header.container table td.label { padding: 15px; padding-left:0px;}
+/* line 83, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.header.container table td.logo {
+  padding: 15px; }
 
+/* line 84, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.header.container table td.label {
+  padding: 15px;
+  padding-left: 0px; }
 
-/* ------------------------------------- 
-		BODY 
+/* -------------------------------------
+ * BODY
 ------------------------------------- */
-table.body-wrap { width: 100%;}
+/* line 89, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+table.body-wrap {
+  width: 100%; }
 
-
-/* ------------------------------------- 
-		FOOTER 
+/* -------------------------------------
+		FOOTER
 ------------------------------------- */
-table.footer-wrap { width: 100%;	clear:both!important;
-}
-.footer-wrap .container td.content  p { border-top: 1px solid rgb(215,215,215); padding-top:15px;}
-.footer-wrap .container td.content p {
-	font-size:10px;
-	font-weight: bold;
-	
-}
+/* line 94, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+table.footer-wrap {
+  width: 100%; }
+  /* line 97, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  table.footer-wrap clear:both! important
+  .container td.content p {
+    border-top: 1px solid #d7d7d7;
+    padding-top: 15px;
+    font-size: 10px;
+    font-weight: bold; }
 
-
-/* ------------------------------------- 
-		TYPOGRAPHY 
+/* -------------------------------------
+		TYPOGRAPHY
 ------------------------------------- */
-h1,h2,h3,h4,h5,h6 {
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;
-}
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; text-transform: none; }
+/* line 108, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  color: #000; }
 
-h1 { font-weight:200; font-size: 44px;}
-h2 { font-weight:200; font-size: 37px;}
-h3 { font-weight:500; font-size: 27px;}
-h4 { font-weight:500; font-size: 23px;}
-h5 { font-weight:900; font-size: 17px;}
-h6 { font-weight:900; font-size: 14px; text-transform: uppercase; color:#444;}
+/* line 115, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: #6f6f6f;
+  line-height: 0;
+  text-transform: none; }
 
-.collapse { margin:0!important;}
+/* line 122, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h1 {
+  font-weight: 200;
+  font-size: 44px; }
 
-p, ul { 
-	margin-bottom: 10px; 
-	font-weight: normal; 
-	font-size:14px; 
-	line-height:1.6;
-}
-p.lead { font-size:17px; }
-p.last { margin-bottom:0px;}
+/* line 123, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h2 {
+  font-weight: 200;
+  font-size: 37px; }
 
+/* line 124, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h3 {
+  font-weight: 500;
+  font-size: 27px; }
+
+/* line 125, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h4 {
+  font-weight: 500;
+  font-size: 23px; }
+
+/* line 126, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h5 {
+  font-weight: 900;
+  font-size: 17px; }
+
+/* line 127, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+h6 {
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #444; }
+
+/* line 129, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.collapse {
+  margin: 0 !important; }
+
+/* line 131, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+p, ul {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.6; }
+
+/* line 137, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+p.lead {
+  font-size: 17px; }
+
+/* line 138, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+p.last {
+  margin-bottom: 0px; }
+
+/* line 140, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 ul li {
-	margin-left:5px;
-	list-style-position: inside;
-}
+  margin-left: 5px;
+  list-style-position: inside; }
 
-/* ------------------------------------- 
-		SIDEBAR 
+/* -------------------------------------
+		SIDEBAR
 ------------------------------------- */
+/* line 148, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 ul.sidebar {
-	background:#ebebeb;
-	display:block;
-	list-style-type: none;
-}
-ul.sidebar li { display: block; margin:0;}
-ul.sidebar li a {
-	text-decoration:none;
-	color: #666;
-	padding:10px 16px;
-/* 	font-weight:bold; */
-	margin-right:10px;
-/* 	text-align:center; */
-	cursor:pointer;
-	border-bottom: 1px solid #777777;
-	border-top: 1px solid #FFFFFF;
-	display:block;
-	margin:0;
-}
-ul.sidebar li a.last { border-bottom-width:0px;}
-ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.sidebar li a h5,ul.sidebar li a h6,ul.sidebar li a p { margin-bottom:0!important;}
+  background: #ebebeb;
+  display: block;
+  list-style-type: none; }
+  /* line 152, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  ul.sidebar li {
+    display: block;
+    margin: 0; }
+    /* line 155, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+    ul.sidebar li a {
+      text-decoration: none;
+      color: #666;
+      padding: 10px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #777777;
+      border-top: 1px solid #FFFFFF;
+      display: block;
+      margin: 0; }
+      /* line 165, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+      ul.sidebar li a.last {
+        border-bottom-width: 0px; }
 
+/* line 178, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+ul.sidebar li a h1,
+ul.sidebar li a h2,
+ul.sidebar li a h3,
+ul.sidebar li a h4,
+ul.sidebar li a h5,
+ul.sidebar li a h6,
+ul.sidebar li a p {
+  margin-bottom: 0 !important; }
 
-
-/* --------------------------------------------------- 
+/* ---------------------------------------------------
 		RESPONSIVENESS
-		Nuke it from orbit. It's the only way to be sure. 
+		Nuke it from orbit. It's the only way to be sure.
 ------------------------------------------------------ */
-
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+/* line 188, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .container {
-	display:block!important;
-	max-width:600px!important;
-	margin:0 auto!important; /* makes it centered */
-	clear:both!important;
-}
+  display: block !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  clear: both !important; }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
+/* line 196, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .content {
-	padding:15px;
-	max-width:600px;
-	margin:0 auto;
-	display:block; 
-}
-
-/* Let's make sure tables in the content area are 100% wide */
-.content table { width: 100%; }
-
+  padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block; }
+  /* line 201, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  .content table {
+    width: 100%; }
 
 /* Odds and ends */
+/* line 207, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .column {
-	width: 300px;
-	float:left;
-}
-.column tr td { padding: 15px; }
-.column-wrap { 
-	padding:0!important; 
-	margin:0 auto; 
-	max-width:600px!important;
-}
-.column table { width:100%;}
+  width: 300px;
+  float: left; }
+  /* line 210, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  .column tr td {
+    padding: 15px; }
+
+/* line 215, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.column-wrap {
+  padding: 0 !important;
+  margin: 0 auto;
+  max-width: 600px !important; }
+
+/* line 221, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.column table {
+  width: 100%; }
+
+/* line 223, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
 .social .column {
-	width: 280px;
-	min-width: 279px;
-	float:left;
-}
+  width: 280px;
+  min-width: 279px;
+  float: left; }
 
 /* Be sure to place a .clear element after each set of columns, just to be safe */
-.clear { display: block; clear: both; }
+/* line 230, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+.clear {
+  display: block;
+  clear: both; }
 
-
-/* ------------------------------------------- 
-PHONE
-For clients that support media queries.
-Nothing fancy. 
+/* -------------------------------------------
+  PHONE
+  For clients that support media queries.
+  Nothing fancy.
 -------------------------------------------- */
 @media only screen and (max-width: 600px) {
+  /* line 243, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  a[class="btn"] {
+    display: block !important;
+    margin-bottom: 10px !important;
+    background-image: none !important;
+    margin-right: 0 !important; }
 
-  a[class="btn"] { display:block!important; margin-bottom:10px!important; background-image:none!important; margin-right:0!important;}
+  /* line 250, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
+  div[class="column"] {
+    width: auto !important;
+    float: none !important; }
 
-  div[class="column"] { width: auto!important; float:none!important;}
-
+  /* line 255, /Users/ryan.parsley/Sites/mailman/source/stylesheets/email.css.scss */
   table.social div[class="column"] {
-    width:auto!important;
-  }
-
-}
-
+    width: auto !important; } }
